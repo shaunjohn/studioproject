@@ -1,0 +1,104 @@
+// 
+//
+//    Name       : BUTTONS
+// 
+//   Created on  : 2015-05-27
+//   Updated on  : 2015-05-29
+//   Author      : smeku
+//
+//
+.btn {
+    background: transparent;
+    color: @color-gray;
+    border: 1px solid @color-gray-light;
+    .transition(all .8s ease 0s);
+    border-radius: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: @font-heading;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    background: #fff;
+
+    
+    .ico-left {
+        margin-right: 8px;
+        margin-left: -4px;
+        padding-right:5px; 
+        line-height: 100%;
+    }
+    .ico-right {
+        margin-left: 8px;
+        margin-right: -4px;
+        padding-left:5px; 
+        line-height: 100%;
+    }
+    
+    &.btn-default {
+        background: #fff;
+    }
+    
+    &.btn-primary {
+        border-color: transparent;
+        background: @color-default;
+        color: #fff;
+    }
+    
+    &.btn-success {
+        border-color: @color-green;
+    }
+    
+    &.btn-info {
+        border-color: @color-blue;
+    }
+    
+    &.btn-warning {
+        border-color: #8a6d3b;
+    }
+    
+    &.btn-danger {
+        border-color: @color-red;
+    }
+    
+    &.btn-link {
+        background: none;
+        border: 0;
+        text-transform: capitalize;
+        color: @color-gray;
+    }
+    &.btn-link.active { color: @color-default; }
+    
+    &:hover,
+    &.btn-link:hover,
+    &.btn-link.active:hover,
+    &.btn-success:hover,
+    &.btn-info:hover,
+    &.btn-warning:hover,
+    &.btn-danger:hover {
+        background: @color-default;
+        border-color: transparent;
+        color:#fff;
+        text-decoration: none;
+    }
+    
+    &.btn-primary:hover { 
+       color: @color-gray;
+       border-color: @color-gray-light;
+       background: #fff;      
+    }
+      
+    
+    &.btn-lg {
+        padding: 15px 23px;
+    }
+    &.btn-sm {
+        padding: 8px 12px;
+    }
+    &.btn-xs {
+        padding: 4px 6px;
+    }
+       
+}

@@ -1,0 +1,160 @@
+// 
+//
+//    Name       : TIMELINE
+// 
+//   Created on  : 2015-05-14
+//   Updated on  : 2015-07-12
+//   Author      : smeku
+//
+//
+
+
+.timeline {
+    margin-bottom: 20px;
+    
+    .timeline-item {
+        position: relative;
+        display: table; 
+        width:100%;
+        padding: 20px 0;
+
+        .lt-date-icon {
+            position: relative;
+            display: table-cell; 
+            vertical-align:top;
+            width: 50px;
+            padding: 10px 0;
+            padding-right: 10px;
+
+            &:before {
+                top: -20px;
+                bottom: -20px;
+                right: 28px;
+                width: 4px;
+                content: '';
+                background: #fff;
+                border-color: @color-gray-light;
+                border-left: 1px solid @color-gray-light;
+                border-right: 1px solid @color-gray-light;
+                position: absolute;
+                margin-left: -14px;
+                display: inline-block; 
+            }
+            
+            @media (min-width: @screen-sm-min) { 
+                & { 
+                    width: 220px;
+                    padding-right: 20px;
+                    
+                    &:before {
+                        right: 38px;  
+                    }
+                    
+                } 
+            }
+            
+        } // .lt-date-icon
+
+        .tl-date {
+            display: inline-block; 
+            position: absolute; 
+            left: 100%;
+            padding-left: 20px;
+            top:15px;
+            font-family: @font-heading;
+
+
+            @media (min-width: @screen-sm-min) { 
+                & { 
+                    position: relative; 
+                    left: auto;
+                    top:auto;
+                    width: 160px;
+                    padding-left: 0;
+                    float:left;
+                    text-align: right;
+                } 
+            }
+
+            span {
+                padding-right: 20px;
+                white-space: nowrap;
+                line-height: 0;
+                &:first-child {
+                    color: #999;
+                    font-size: 12px;
+                    font-weight: 300;
+                    line-height: 14px;
+                    display: none;
+                    letter-spacing: 1.5px;
+
+                    @media (min-width: @screen-sm-min) { & { display: block; } }
+                }
+
+                &:last-child {
+                    color: @color-gray-light;
+                    font-size: 12px;
+                    font-weight: 300;
+
+                    @media (min-width: @screen-sm-min) { & { color: #333; font-size: 24px;letter-spacing: 1px; } }
+
+                }
+
+            }
+        }
+            
+        .tl-icon {
+            position: relative;
+            float: right;
+            margin: 0;
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            line-height: 39px;
+            //border: 1px solid #fff;
+            border-radius: 50%;
+
+            .fa-stack-2x {
+                font-size: 39px;
+                
+            }
+            .fa-stack-1x {
+                //font-size: 12px;
+                line-height: 39px;
+                height: 39px;
+            }
+        }
+            
+        .tl-box {
+                padding: 10px 20px 10px 20px;
+                border: 1px solid @color-gray-light;
+                //background: #fff;
+                line-height: 1.4;
+                display: table-cell; 
+                position: relative;
+                vertical-align:top;
+                
+                &::after {
+                    right: 100%;
+                    border: solid transparent;
+                    content: " ";
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    pointer-events: none;
+                    border-right-color: @color-gray-light;
+                    border-width: 10px;
+                    top: 18px;
+                }
+
+                .title {
+                    margin-bottom: 5px;
+                    text-transform: uppercase;
+                }
+
+            }
+        
+
+    } 
+}
+
