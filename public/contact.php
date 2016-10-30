@@ -5,8 +5,8 @@ session_start();
 // Enter the $site_owners_email that you want to emails to be sent to.
 // Example $site_owners_email = "joe.doe@yourdomain.com";
 
-$site_owners_email = "joe.doe@yourdomain.com";  // Replace this with your own email address
-$subject = "Contact Form";                       // subject to email             
+$site_owners_email = "hi@studioproject.co";  // Replace this with your own email address
+$subject = "Website Contact Form";                       // subject to email             
 
 
 // Alert info
