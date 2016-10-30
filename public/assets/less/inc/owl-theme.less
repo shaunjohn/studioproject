@@ -1,0 +1,127 @@
+//
+//
+//    Name       : OWL-THEME
+// 
+//   Created on  : 2015-05-29
+//   Updated on  : 2015-05-29
+//   Author      : smeku
+//
+//
+.owl-theme {
+
+    &:hover .owl-controls .owl-nav [class*='owl-']:before { opacity: 1; }
+    &:hover .owl-controls .owl-nav .owl-prev:before { left: 0px; }
+    &:hover .owl-controls .owl-nav .owl-next:before { right: 0px; }
+    
+    .owl-controls {
+        
+        .owl-nav {
+            height: 0;
+            
+            [class*='owl-']{
+                color: #fff;
+                display: inline-block;
+                zoom: 1;
+                font-size:0;
+                
+                &:hover:before {
+                    background: @color-default;
+                    color: #fff;
+                }
+
+                &:before{ 
+                    background: #fff;
+                    color: @color-gray;
+                    position: absolute;
+                    top: 50%; 
+                    width: 50px;
+                    height: 50px;
+                    font-family: FontAwesome;
+                    font-size: 30px; 
+                    line-height: 50px;
+                    text-align: center;
+                    margin-top:-25px;
+                    .transition(all .3s ease);
+                    opacity: 0;
+                    
+                    &:hover{
+                        background: @color-default;
+                        color:#fff;
+                    }
+                }       
+                
+            }
+
+            .owl-prev:before {
+                content: "\f104";
+                left: -50px;
+            }
+            .owl-next:before {  
+                content: "\f105";
+                right: -50px;
+            }
+            .disabled {
+                opacity: 0.5;
+                cursor: default;
+            }
+
+        }
+        
+        
+    }
+
+    .owl-dots {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+
+        .owl-dot {
+            display: inline-block;
+            zoom: 1;
+
+            &.active span {
+                background:@color-gray;  
+                border: 1px solid transparent;
+            }
+
+            &:hover span {
+                background:@color-gray; 
+                border: 1px solid @color-gray-light;
+            }
+
+            span {
+                width: 12px;
+                height: 12px;
+                margin: 0px 7px 5px 7px;
+                background: @color-gray-light;
+                border: 1px solid @color-gray;
+                display: block;
+                -webkit-backface-visibility: visible;
+                .transition(opacity 200ms ease);
+                -webkit-border-radius: 30px;
+                -moz-border-radius: 30px;
+                border-radius: 30px;
+            }
+            
+        }
+    }
+
+    .owl-caption {
+        position: absolute;
+        bottom: 0;
+        left:0;
+        margin-bottom:0;
+        margin-left: 0;
+        display: none;
+        min-width: 100%;
+        background: fade(@color-default, 95%);
+        color:#fff;
+        text-align: center;
+        padding: 10px;
+
+        @media (min-width: @screen-sm-min) { &{display: inline-block;} }
+
+    }
+    
+}
+

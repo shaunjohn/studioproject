@@ -1,0 +1,196 @@
+// 
+//
+//    Name       : TESTIMONIALS
+// 
+//   Created on  : 2015-06-16
+//   Updated on  : 2015-07-09
+//   Author      : smeku
+//
+//
+
+.testimonials {  
+    padding-top: 5px;
+
+    .owl-controls {
+        position: relative;
+
+        .testimonials-owl-nav {
+            top: -65px;
+            position: relative;
+            opacity: 1;
+            width: 100%;
+            text-align: right;
+            text-shadow: none;
+            position: absolute;
+            .owl-prev,
+            .owl-next {
+                color: @color-default;
+                display: inline-block;
+                zoom: 1;
+                font-size:0;
+                cursor: pointer;
+            }
+            .owl-prev:hover:before,
+                .owl-next:hover:before{
+                background: @color-default;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .owl-prev:before,
+                .owl-next:before {
+                position: relative; 
+                margin: 2px;
+                width: 28px;
+                height: 28px;
+                font-family: FontAwesome;
+                font-size: 16px; 
+                line-height: 28px;
+                text-align: center;
+                //margin-top:-25px;
+                display: block;
+                cursor: pointer;
+            }
+
+
+            .owl-prev:before {
+                content: "\f104";
+            }
+            .owl-next:before {  
+                content: "\f105";
+            }
+
+        }
+    }
+
+    .item {
+        p {
+            position: relative;
+            margin: 1px;
+            padding: 15px 20px;
+            //font-size: 14px;
+            font-style: italic; 
+            border: 1px solid @color-gray-light;          
+
+            &:after {
+                width: 0; 
+                height: 0;
+                content: " ";
+                display: block; 
+                position: absolute; 
+                border-top-color: @color-gray-light;
+                border-left-style: inset;
+                border-right-style: inset; 
+            }
+
+        }
+        p:after,
+            p:before {
+            left: 80px;
+            bottom: -22px;
+        }
+        p:after {
+            border-top: 22px solid; 
+            border-left: 0 solid transparent;
+            border-right: 22px solid transparent;
+        }
+    }
+
+    .testimonial-info {
+
+        padding: 0 15px;
+        margin-top: 18px;
+        span {
+            top: 3px;
+            position: relative;
+        }
+        h6 {
+            padding-top: 10px;
+            margin-bottom: 0px;
+            font-weight: 400;
+            //font-size: 16px;
+            letter-spacing: .5px;
+        }
+
+        em {
+            color: #777;
+            display: block;
+            //font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        img {
+            width: 60px;
+            float: left;
+            height: 60px;
+            padding: 2px;
+            margin-right: 15px;
+            border: solid 1px #ccc;
+        }
+    }
+    .testimonial-author {
+        overflow: hidden;
+    }
+}
+
+
+/*  colors whote */
+.testimonials.testimonials-bg-white .item p,
+.testimonials-bg-white .testimonials-owl-nav .owl-prev:before,
+.testimonials-bg-white .testimonials-owl-nav .owl-next:before{
+  background:  @color-white;
+  border-color: @color-gray-light;
+  color:#444; 
+}
+.testimonials.testimonials-bg-white .item p:after {
+  border-top-color:  @color-gray-light;
+}
+
+/*  colors gray-light */
+.testimonials-bg-gray-light .item p,
+.testimonials-bg-gray-light .testimonials-owl-nav .owl-prev:before,
+.testimonials-bg-gray-light .testimonials-owl-nav .owl-next:before{
+  background:  @color-gray-light;
+  border-color: @color-gray-light;
+  color:#444; 
+}
+.testimonials.testimonials-bg-gray-light .item p:after {
+  border-top-color:  @color-gray-light;
+}
+
+/*  colors gray */
+.testimonials-bg-gray .item p,
+.testimonials-bg-gray .testimonials-owl-nav .owl-prev:before,
+.testimonials-bg-gray .testimonials-owl-nav .owl-next:before{
+  background:  @color-gray;
+  border-color: @color-gray;
+  color: #fff;
+}
+.testimonials.testimonials-bg-gray .item p:after {
+  border-top-color:  @color-gray;
+}
+
+/*  colors default */
+.testimonials.testimonials-bg-default .item p,
+.testimonials.testimonials-bg-default .testimonials-owl-nav .owl-prev:before,
+.testimonials.testimonials-bg-default .testimonials-owl-nav .owl-next:before{
+  background: @color-default;
+  border-color: @color-default;
+  color:#fff;    
+}
+.testimonials.testimonials-bg-default .item p:after {
+  border-top-color: @color-default;
+}
+
+/*  colors dark */
+.testimonials-bg-dark .item p,
+.testimonials-bg-dark .testimonials-owl-nav .owl-prev:before,
+.testimonials-bg-dark .testimonials-owl-nav .owl-next:before{
+  background:  #252525;
+  border-color: #252525;
+  color: #fff;
+}
+.testimonials.testimonials-bg-dark .item p:after {
+  border-top-color:  #252525;
+}
+    

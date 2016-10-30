@@ -1,0 +1,426 @@
+// 
+//
+//    Name       : PORTFOLIO
+// 
+//   Created on  : 2015-06-04
+//   Updated on  : 2015-06-04
+//   Author      : smeku
+//
+//
+
+
+
+/*  Portfolio filter Navigation  */
+.portfolio-filter-nav {
+    text-align: right;
+    padding: 0px;
+    padding-bottom: 10px;
+    //margin-top: -40px;
+    position: relative;
+    z-index: 1;
+    display:block;
+    
+
+    @media (min-width: @screen-md-min) {
+        & > button { display: none; }
+        .collapse { display: block; }
+    }   
+    
+
+    button.btn-link {
+        font-weight: 300;
+        text-transform: uppercase; 
+        padding: 4px 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+        -webkit-font-smoothing: antialiased;
+        -webkit-font-smoothing: subpixel-antialiased;
+      
+        //&:hover { color:  @color-default; background: none; }
+        &.active {background:  @color-default; color:#fff;  box-shadow: none;}
+    }
+
+}
+
+/*  Portfolio colums  */
+.portfolio-colum {
+    position: relative;
+
+
+    &.portfolio-nopadding {    
+        figure {padding: 0;}
+    }
+    &.portfolio-padding1 {
+        margin:0 -1px;     
+        figure {padding: 1px;}
+    }
+    &.portfolio-padding2 {
+        margin:0 -2px;     
+        figure {padding: 2px;}
+    }
+    &.portfolio-padding3 {
+        margin:0 -3px;     
+        figure {padding: 3px;}
+    }
+    &.portfolio-padding4 {
+        margin:0 -4px;     
+        figure {padding: 4px;}
+    }
+    &.portfolio-padding5 {
+        margin:0 -5px;     
+        figure {padding: 5px;}
+    }
+    &.portfolio-padding7 {
+        margin:0 -7px;     
+        figure {padding: 7px;}
+    }
+    &.portfolio-padding10 {
+        margin:0 -10px;     
+        figure {padding: 10px;}
+    }
+    &.portfolio-padding15 {
+        margin:0 -15px;     
+        figure {padding: 15px;}
+    }  
+    &.portfolio-padding20 {
+        margin:0 -20px;     
+        figure {padding: 20px;}
+    }
+    
+    
+    &.portfolio-masonry {
+
+        & > figure {
+            width: 100%;
+            float: left;
+            margin: 0; 
+        }
+                
+        @media (min-width: @screen-sm-min) {
+
+            &.masonry-grid-2 > figure {width: 50%; }
+            &.masonry-grid-3 > figure {width: 50%; }
+            &.masonry-grid-4 > figure { width: 50%; }
+        }
+        
+        @media (min-width: @screen-md-min) {
+
+            &.masonry-grid-3 > figure {width: 33.333%;}
+            &.masonry-grid-4 > figure {width: 25%;} 
+        }
+              
+    }
+    
+    
+
+    figure {
+        position: relative;
+        padding:6px;
+
+        a{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            color:#fff;
+
+            img{
+                position: relative;
+                display:block;
+                width: 100%;
+            }
+
+            div {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background:rgba(0,0,0,.7);
+                text-align:center;
+                color: rgba(255,255,255, 1);
+
+                .name{
+                    letter-spacing: .5px;
+                    display: block;
+                    padding: 5px 8px;
+                    margin: 20px 20px 0;
+                    text-align:left;
+                    border-left:4px solid @color-default;
+                    //font-weight: 300;
+                    
+                }
+                small {
+                    letter-spacing: 1.5px;
+                    display: block;
+                    font-size: 12px;
+                    font-weight: 300;
+                    margin-bottom: 0;
+                    padding: 10px;
+                    text-transform: none;
+                    bottom:0;
+                    left:10px;
+                    position:absolute;
+                }
+                i {
+                    font-size: 20px;
+                    height: 40px;
+                    text-align: center;
+                    width: 40px;
+                    bottom:0;
+                    line-height:40px;
+                    right:0;
+                    position:absolute;
+                }
+            }
+        }
+    }
+    
+    &.portfolio-hover {
+        
+        &.hover-white { 
+            figure a div {
+                background: rgba(255,255,255, .8);
+                color: @color-base;
+                .name {
+                    color: @color-base;
+                }
+               
+            }
+        }
+
+        &.hover-scale {
+
+            figure {
+
+                img {
+                    .transition(all 0.8s 0s);
+                    
+                }
+
+                &:hover {
+                    img {
+                        .transform(scale(1.2));
+                        -webkit-transition-delay: .4s; /* Safari */
+                         transition-delay: .4s;
+                    }
+                }
+
+            }
+        }
+
+        &.hover-v2 {
+            
+            figure {
+                a {
+                    div {
+                        background: none;
+                        color: #666;
+                        text-align: left;
+                        padding: 5%;
+                        
+                        .name {
+                            background: rgba(0,0,0, .8);
+                            color: #fff;
+                            border: 0;
+                            display: inline-block;
+                            padding: 10px;
+                            margin: 0;
+                            float: left;
+                            clear: left;
+                        }
+
+                        small {
+                            background: rgba(0,0,0, .7);
+                            color: rgba(255,255,255, .9);
+                            padding: 2px 6px;
+                            margin: 0;
+                            position: relative;
+                            left: 5px;
+                            display: inline-block;
+                            float: left;
+                            clear: left;
+                        }
+                        i {
+                            margin-bottom: -40px;
+                            opacity: 0;
+                            font-size: 16px;
+                            //background: rgba(0,0,0, .6);
+                            color: rgba(0,0,0, .9);
+                            .transition(margin 1s);
+                        }
+                        
+                        &:hover {
+                        i {
+                            opacity: 1;
+                            margin: 0;
+                            
+                        }
+                    }
+                        
+                       
+                    }
+                    
+                     
+                    
+                    
+                }
+            }
+            
+            &.hover-white {
+                figure a div {
+                    .name,small,i {
+                        background: @color-white;
+                        color: @color-base;
+                    }
+                    
+                }  
+            }
+            &.hover-default {
+                figure a div {
+                    .name {
+                        background: @color-default;
+                        color: @color-white;
+                    }
+                    small {
+                        background: @color-default;
+                        color: @color-white;
+                    }
+                }  
+            }
+            
+            
+        }
+
+
+
+    }
+
+
+
+    
+
+}
+
+  
+/*  Portfolio sharing-btns */ 
+.sharing-btns {
+    margin: 25px 0;
+    margin-right: -25px;
+    .share {
+        font-size: 12px;
+        line-height: 18px;
+        padding-right: 7px;
+        float: left;       
+    }   
+
+}
+
+
+/* Portfolio single v2 */
+.portfolio-single-v2 {
+    
+    .myrow {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+        
+        .mycol {
+            position: relative;
+            top:0;
+            bottom: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 100%;            
+        }
+
+        .col-info {
+            padding: 0px 30px;
+            height: 100%;
+            overflow-y: auto;
+
+            &.open {
+                width: 100%;
+                height: 100%;
+            }
+
+            .page-header {
+                margin-top: 50px;
+            }
+            
+            
+            a {
+                font-weight: 300;
+                font-family: @font-default;
+            
+            }
+            
+        }
+          
+    }
+
+    .button-close,
+    .button-info {
+        display: none;
+    }
+    
+     @media (max-width: @screen-md-min) {
+
+        .col-info.open .button-close,
+        .button-info {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            z-index: 1;
+            margin: 0;
+            margin-right: 10px;
+            display: block;
+        }
+
+        .myrow .col-info {
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            top:-2px;
+            right: 0;
+            z-index: 1;
+            background: #fff;
+            -webkit-transition: width 1s, height 1s;
+            transition: width 1s, height 1s;
+        }
+
+    }
+    
+    .box-ster {
+        position: fixed; 
+        z-index: 99992;
+        bottom: 0;
+        right:7px; 
+        padding:0;
+        padding-right: 0px;
+        text-align: right;
+        display:inline;
+        
+        &.box-ster-topleft {
+            bottom: none;
+            right:none;
+            top:0;
+            left:0;
+        }
+        
+        .btn {
+            padding: 0;
+            width: 46px;
+            height: 46px;
+            line-height: 44px;
+            text-align: center;
+            
+            i.fa { line-height: 44px;}
+        }
+    }                        
+
+}
+
+
+

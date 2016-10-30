@@ -1,0 +1,780 @@
+/*
+ *   Template Name: Euforia - Responsive Vcard Template
+ *   Version: 2.0.4
+ *   Author:  Lukasz Lelek
+ *   Website: www.ht2.pl
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+/*
+ *	TABLE CONTENTS
+ *	-------------------------------
+ *                
+ *           - GENERAL STYLESHEET
+ *               + heading
+ *               + colors
+ *               + background-colors
+ *               + spacing
+ *               + list-main
+ *               + dropcap
+ *               + anim-shadow
+ *               + container
+ *               + vertical align
+ *               + col-box
+ *           - NAVIGATION
+ *               + logo
+ *               + mobile menu button
+ *               + menu
+ *               + footer
+ *           - PAGE WRAPPER
+ *               + section
+ *               + header
+ *               + page-ajax-preloader
+ *           - PORTFOLIO
+ *               + portfolio-filter
+ *               + portfolio-colum
+ *               + portfolio-single2
+ *           - PRELOADER
+ *           - PAGE HEADER
+ *           - FORM STYLE
+ *           - BUTTONS 
+ *           - ALERTS
+ *           - FATURES
+ *           - ACHIVEMENT 
+ *           - TESTIMONIAL
+ *           - TIMELINE 
+ *           - SKILLS
+ *           - SOCIAL ICONS
+ *           - OWL THEME (plugin: owl.carousel )
+ *
+ *	------------------------------- 
+ */
+
+
+
+/* =================================================================== */
+/*   GENERAL STYLESHEET
+/* =================================================================== */
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html, body{ 
+    width: 100%; 
+    height: 100%; 
+}
+
+body{
+    font-family: @font-default;
+    font-weight: 300;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+ 
+p{
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: @color-base;
+    font-weight: 300;
+}
+
+
+a{
+    font-family: @font-heading;
+    color: @color-base;
+    font-size: 14px; 
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    .transition(all 0.4s);
+    &:hover{
+        text-decoration: none;
+        color: @color-default;
+    }
+    &:focus,
+    &:visited{
+        outline: none;
+        text-decoration: none;
+    }
+    
+    &.anim-link {
+        .transition(all 0.4s);
+        &:hover{
+            letter-spacing: 1.5px;
+            color: @color-default;
+        }
+    }
+      
+}
+
+ul,
+li {
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: @color-base;
+    font-weight: 300;   
+}
+
+
+blockquote {
+    margin:20px 0; 
+}
+
+
+/* Heading */
+h1, h2, h3, h4, h5, h6{
+    font-family: @font-heading;
+    font-weight: 400;
+}
+h1{
+    font-size: 80px;
+}
+h2{
+    font-size: 60px;
+}
+h3{
+    font-size: 40px;
+}
+h4{
+    font-size: 24px;
+    letter-spacing: 1.5px;
+}
+h5{
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+h6{
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+@media(max-width: 767px) {
+    h1{
+        font-size: 70px;
+    }
+    h2{
+        font-size: 50px;
+    }
+    h3{
+        font-size: 30px;
+    }
+    h4{
+        font-size: 20px;
+    }  
+}
+@media(max-width: 480px){
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    h3{
+        font-size: 24px;
+    }
+}
+ 
+/* color */
+.color-default    {color: @color-default;}
+.color-black      {color: @color-black;}
+.color-white      {color: #fff;}
+.color-blue       {color: @color-blue;}
+.color-red        {color: @color-red;}
+.color-orange     {color: @color-orange;}
+.color-yellow     {color: @color-yellow;}
+.color-green      {color: @color-green;}
+.color-purple     {color: @color-purple;}
+.color-navy       {color: @color-navy;}
+.color-brown      {color: @color-brown;}
+.color-gray       {color: @color-gray;}
+.color-gray-light {color: @color-gray-light;}
+.color-gray-lighter {color: @color-gray-lighter;}
+
+/* background-color */
+.bg-default       {background: @color-default;}
+.bg-black         {background: @color-black;}
+.bg-dark          {background: @color-dark;}
+.bg-white         {background: #fff;}
+.bg-blue          {background: @color-blue;}
+.bg-red           {background: @color-red;}
+.bg-orange        {background: @color-orange;}
+.bg-yellow        {background: @color-yellow;}
+.bg-green         {background: @color-green;}
+.bg-purple        {background: @color-purple;}
+.bg-navy          {background: @color-navy;}
+.bg-brown         {background: @color-brown;}
+.bg-gray          {background: @color-gray;}
+.bg-gray2         {background: @color-gray2;}
+.bg-gray-light    {background: @color-gray-light;}
+.bg-gray-lighter  {background: @color-gray-lighter;}
+.bg-none          {background: none !important;}
+
+
+
+/* Spacing */
+.space5  {height: 5px;}
+.space10 {height: 10px;}
+.space20 {height: 20px;}
+.space30 {height: 30px;}
+.space40 {height: 40px;}
+.space50 {height: 50px;}
+.space60 {height: 60px;}
+.space70 {height: 70px;}
+.space80 {height: 80px;}
+.space100 {height: 100px;}
+
+
+/* img-thumbnail */
+.img-thumbnail {
+  border: 1px solid @color-gray-light;
+  border-radius: 0;
+}
+
+
+/* List-main */
+ul.list-main {
+    margin: 10px;
+    li {
+        line-height: 2;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+}
+
+
+/* Lead */
+.lead{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/* Dropcap */
+.dropcap {
+    display: block;
+    float: left;
+    margin: 0;
+    margin-right: 8px;
+    font-weight: 400;
+    font-size: 49px;
+    line-height: 49px;
+    text-transform: uppercase;
+}
+
+/* Anim shadow */
+.anim-shadow {
+    .transition(box-shadow .6s);
+    .box-shadow(none);
+    &:hover {
+        z-index: 2;
+        .box-shadow( 0px 0px 40px 10px fade(#eee, 80%));
+    }
+}
+
+/* col-box */
+.col-box {
+  padding: 20px 30px;
+  border: 1px solid @color-gray-light;
+  margin-left: -1px;
+  margin-bottom: -1px;
+}
+
+
+
+/* img-box */
+@media (min-width: @screen-md-min) {
+    .img-box-left {
+        //position: relative;
+        right: -70px; 
+        left: 0; 
+        width: 115%; 
+        max-width: 115%;
+        z-index: -1;
+    }
+    .img-box-right {
+        position: relative;
+        left: -70px; 
+        right: 0; 
+        width: 115%; 
+        max-width: 115%;
+        z-index: -1;
+    }
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-border {
+    border: 0 !important;
+}
+
+.relative {
+    position: relative;
+}
+
+
+
+/* my-scrollbar */
+.my-scrollbar {
+  
+    &::-webkit-scrollbar-track {
+        background-color: @color-gray-light;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+    }
+ 
+    &::-webkit-scrollbar-thumb {
+        background-color: @color-default;
+    }
+}
+
+
+/* container */
+@media (min-width: 768px) {
+  .container {
+     width: auto;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: auto;
+  }
+}
+@media (min-width: @screen-lg-min) {
+  .container {
+    width: 1200px - @nav-left-width-lg;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* vertical align */
+.v-align-xs, 
+.v-align-sm,
+.v-align-md,
+.v-align-lg{
+    display: block;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.v-align-xs {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@media (min-width: @screen-sm-min) {
+    
+    .v-align-sm { display: -webkit-box; display: -webkit-flex;display: -ms-flexbox;display: flex; }
+}
+@media (min-width: @screen-md-min) {
+    
+    .v-align-md { display: -webkit-box; display: -webkit-flex;display: -ms-flexbox;display: flex; }
+}
+@media (min-width: @screen-lg-min) { 
+
+    .v-align-lg { display: -webkit-box; display: -webkit-flex;display: -ms-flexbox;display: flex; }
+
+}
+    
+
+
+
+/* =================================================================== */
+/*   NAV - NAVIGATION
+/* =================================================================== */
+@import "inc/nav.less";
+
+
+/* =================================================================== */
+/*   PAGE WRAPPER
+/* =================================================================== */
+.page-wrapper {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right:0;
+    top:50px;
+    bottom: 0;
+    margin-left: @nav-left-width-xs;
+    -webkit-perspective: 1400px;
+    -moz-perspective: 1400px;
+    perspective: 1400px;
+    -webkit-perspective-origin:10% 10%;
+    -moz-perspective-origin: 10% 10%;
+    perspective-origin: 10% 10%;
+    overflow: hidden;  
+    
+    @media (min-width: @screen-sm-min) { & { top:50px; margin-left: @nav-left-width-sm; } }
+    @media (min-width: @screen-md-min) { & { top:0; margin-left: @nav-left-width-md; } }
+    @media (min-width: @screen-lg-min) { & { margin-left: @nav-left-width-lg; } }
+    
+    
+    &.page-white {
+        section {
+            background: @color-white;
+        }
+        // new bg img + color opacity (beta)
+        &.page-opacity .section-current { background: fade(@color-white, 95%); }
+    }
+     
+    
+    &.page-gray-light {
+        section {
+            background: @color-gray2;
+        }
+        &.page-opacity .section-current { background: fade(@color-gray2, 95%); }
+    }
+    &.page-dark {
+        section {
+            background: #252525; //@color-dark;
+        }
+        &.page-opacity .section-current { background: fade(@color-dark, 95%); }
+    }
+    
+    &.page-metalic {
+        section {
+            background: -webkit-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%);
+            background:    -moz-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); 
+            background:     -ms-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%);
+            background:      -o-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); 
+            background:         linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%);
+        } 
+    }
+    
+    
+    &.page-opacity .section-current {
+        opacity: .97;
+        filter: alpha(opacity=97);
+    }
+       
+    & > section {
+        position: absolute;
+        z-index: -1;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        visibility: hidden;
+        .transform(translate3d(0, 0, 0));
+        .transform-style(preserve-3d);
+        background: #fff;
+        overflow: hidden;
+        opacity: 0;
+        
+        &.section-current {
+            visibility: visible;
+            z-index: 1; 
+            opacity: 1;  
+        }
+        
+        &.pt-page-ontop {
+            z-index: 2;
+        }
+
+        .content {
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+            height: 100%;
+            overflow: hidden;
+            
+            &.scroll-auto {
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+              
+            &.table {
+                display:table;
+                table-layout: fixed;
+                .table-middle {
+                    position: relative;  
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    display:table-cell;
+                    vertical-align:middle;
+                }
+            }   
+        }// .content  
+               
+        .btn-prev {
+            position: fixed;
+            z-index: 999;
+            top:-1px;
+            left:-1px;
+            margin:0;
+        }    
+
+    }
+    
+    
+    header {
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 25px;
+        
+        h3 {
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: 400;
+            border-right: 4px solid @color-default;
+            padding: 15px 20px 15px 0;
+            color: @color-default;
+            text-transform: uppercase;
+            small {    
+                display: none;
+            }
+        }
+        
+        h5{
+            display: none; 
+        }
+        
+
+        @media (min-width: @screen-md-min) { 
+            &{ 
+                padding-top: 30px; 
+                padding-bottom:50px; 
+                
+                h3 {
+                    letter-spacing: 2px;
+                    display: inline-block;
+                    margin-right: 20px;
+                    font-weight: 400;
+                    border-right: 8px solid @color-default;
+                    padding: 15px 20px 15px 0;
+                    color: @color-default;
+                    text-transform: uppercase;
+                    small {    
+                        display: block;
+                        text-align: right;
+                        color: @color-gray-light;
+                        margin-top: 10px;
+                        font-weight: 300;
+                        font-size: 16px;
+                        font-family: @font-default;
+                        text-transform: lowercase;
+                    }
+                }
+                
+                h5 {
+                    display: inline;
+                    padding-top: 20px; 
+                    color: #000;
+                    letter-spacing: 1.5px;
+                    font-family:  @font-default;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                }
+            
+            
+            } 
+        }
+
+    } // header
+   
+    
+    .page-ajax-preloader {
+        position: fixed;
+        z-index: 9999;
+        top:-50px;
+        left:0;
+        margin:0;
+        background:#fff;
+        padding: 8px 20px;
+        font-weight: 300;
+        font-size: 14px;
+        background: @color-default;
+        color: #fff;
+        .transition(all .2s linear);
+        
+        &.activ { top:0; }
+        
+        &>span {
+            padding-left: 7px;
+            font-family: @font-heading;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+    } 
+  
+}
+       
+
+/* =================================================================== */
+/*   PORTFOLIO
+/* =================================================================== */
+@import "inc/portfolio.less";
+
+
+/* =================================================================== */
+/*   BLOG
+/* =================================================================== */
+@import "inc/blog.less";
+
+
+/* =================================================================== */
+/*   PRELOADER
+/* =================================================================== */
+@import "inc/preloader.less";
+
+
+/* =================================================================== */
+/*   PAGE HEADER
+/* =================================================================== */
+.page-header {
+    padding: 0px;
+    margin: 0;
+    margin-bottom: 20px;
+    border:0;
+    color: @color-default;
+    text-transform: uppercase;
+    
+    h1,h2,h3 {
+        margin-bottom: 10px;
+        font-weight: 700;
+        
+    }
+    h4,h5,h6 {
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    
+    strong {
+            font-weight: 700;
+        }
+    
+    
+    .weight300 {
+            font-weight: 300;
+        }
+    
+    
+}
+
+
+/* =================================================================== */
+/*  FORM STYLE
+/* =================================================================== */
+@import "inc/form-style.less";
+
+
+/* =================================================================== */
+/*  BUTTONS
+/* =================================================================== */
+@import "inc/buttons.less";
+
+
+/* =================================================================== */
+/*  ALERTS
+/* =================================================================== */
+@import "inc/alerts.less";
+
+
+/* =================================================================== */
+/*  FATURES
+/* =================================================================== */
+@import "inc/fatures.less";
+
+
+/* =================================================================== */
+/*  ACHIVEMENT
+/* =================================================================== */
+.achivement {
+
+    .achivement-box {
+        border: 1px solid @color-gray-light;
+        text-align:center;
+        padding:20px 0;
+
+        i {
+            color: @color-default;
+            font-size:64px; 
+        }
+        .name {
+            margin:5px 0;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+        .count {
+            letter-spacing: 2px;
+            display: block;
+            font-size:36px;
+        }
+    }
+}
+
+
+/* =================================================================== */
+/*  TESTIMONIALS
+/* =================================================================== */
+@import "inc/testimonials.less";
+
+
+/* =================================================================== */
+/*  TIMELINE
+/* =================================================================== */
+@import "inc/timeline.less";
+
+
+/* =================================================================== */
+/*  SKILLS
+/* =================================================================== */
+@import "inc/skills.less";
+
+
+/* =================================================================== */
+/*   SOCIAL ICONS
+/* =================================================================== */
+@import "inc/social-icons.less";
+
+
+/* =================================================================== */
+/*  OWL THEME 
+/* =================================================================== */
+@import "inc/owl-theme.less";
+
+
