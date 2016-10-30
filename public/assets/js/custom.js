@@ -37,7 +37,7 @@ $(window).load(function() {
         $("nav").addClass('activ');
         
         // delete preloader
-        $(".preloader").delay("500").fadeOut(500);
+        $(".preloader").delay("250").fadeOut(250);
          
         // page transitions
         var myTimer = setTimeout(function () {
