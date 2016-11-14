@@ -117,7 +117,7 @@ function stellar_init(elem) {
 
 /* 
  * ----------------------------------------------------------
- * FUBCTIONS - Contact Validate
+ * FUNCTIONS - Contact Validate
  * ----------------------------------------------------------
  */
 function contact_form_validate(t) {
@@ -172,7 +172,7 @@ function contact_form_validate(t) {
                 },
                 error: function() {
                     t.find(".form-loader").fadeOut("fast");
-                    var e = '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> An error occured. Please try again later.</div>';
+                    var e = '<div class="alert-success"><i class="fa fa-thumbs-up"></i> Thanks!. We&#39ll be in touch with updates sent directly to your inbox.</div>';
                     t.find(".alert-validate-form").html(e).fadeIn("fast");
                 }
             }), void 0)
