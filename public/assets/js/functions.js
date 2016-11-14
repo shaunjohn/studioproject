@@ -172,7 +172,7 @@ function contact_form_validate(t) {
                 },
                 error: function() {
                     t.find(".form-loader").fadeOut("fast");
-                    var e = '<div class="alert-success"><i class="fa fa-thumbs-up"></i> Thanks!. We&#39ll be in touch with updates sent directly to your inbox.</div>';
+                    var e = '<div class="alert-success"><i class="fa fa-thumbs-up"></i> Thanks! We&#39ll be in touch with updates sent directly to your inbox. For a free assessment, please contact us at <a mailto:"hi@studioproject.co?Subject=Studio%20Project:%20Free%20Assessment" style="cursor:pointer" target="_top">hi@studioproject.co</a></div>';
                     t.find(".alert-validate-form").html(e).fadeIn("fast");
                 }
             }), void 0)
